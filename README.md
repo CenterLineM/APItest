@@ -251,7 +251,7 @@ class DBController {
 ## 建立 路由 RestControlle 與 RESTful 狀態核心
 
 ### 建立 RestController.php 檔案 
-使用依賴反轉 抽象化 處理BBS 的CRUD 操做
+使用OOP 抽象化 處理BBS 的CRUD 操做
 
 ```php
 $view = "";
