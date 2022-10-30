@@ -1,0 +1,26 @@
+# 開啟 rewrite 功能
+Options +FollowSymlinks
+RewriteEngine on
+
+
+# 將外部的URL 映射到 PHP內部 URL
+# CRUD 讀取
+RewriteRule ^bbs/list/$   RestController.php?page_key=list [nc,qsa]
+RewriteRule ^bbs/list$   RestController.php?page_key=list [nc,qsa]
+
+RewriteRule ^bbs/list/([0-9]+)/$   RestController.php?page_key=list&id=$1 [L]
+RewriteRule ^bbs/list([0-9]+)$   bbs/list/$1/ [L,R=301]
+
+# 創建
+RewriteRule ^bbs/create/$   RestController.php?page_key=create [L]
+RewriteRule ^bbs/create$   bbs/create/ [L,R=301]
+# 刪除 +id
+RewriteRule ^bbs/delete/([0-9]+)/$   RestController.php?page_key=delete&id=$1 [L]
+RewriteRule ^bbs/delete([0-9]+)$   bbs/delete/$1 [L,R=301]
+# 更新 +id
+RewriteRule ^bbs/update/([0-9]+)/$   RestController.php?page_key=update&id=$1 [L]
+RewriteRule ^bbs/update/([0-9]+)$   bbs/update/$1/ [L,R=301]
+
+ErrorDocument 404 /api-crud/404.html
+
+
