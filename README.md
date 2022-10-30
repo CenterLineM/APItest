@@ -1,5 +1,4 @@
-# APItest
-#  使用PHP 建置 公佈欄系統 
+#  使用PHP 建置 API公佈欄系統 
 
 ## API 的呼叫方法
 
